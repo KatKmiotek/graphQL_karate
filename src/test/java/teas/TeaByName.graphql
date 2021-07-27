@@ -1,0 +1,6 @@
+query findTeaByName($name: String!){
+    teas(name: $name){
+    name
+    price
+        }
+    }

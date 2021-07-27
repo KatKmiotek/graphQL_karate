@@ -1,4 +1,4 @@
-package examples.teas;
+package teas;
 
 import com.intuit.karate.junit5.Karate;
 

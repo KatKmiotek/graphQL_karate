@@ -1,0 +1,6 @@
+query allTea{
+  teas{
+    name
+    id
+  }
+}
