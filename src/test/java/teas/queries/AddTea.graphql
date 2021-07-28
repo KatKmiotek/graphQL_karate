@@ -1,0 +1,12 @@
+mutation addTea($name: String!, $description: String!, $price: Float!){
+  addTea(teaInput: {
+    name: $name,
+    description: $description,
+    price: $price,
+    producerId: "60b8bc31956abb0009efb4d0"
+  }){
+    id
+    name
+    price
+  }
+}

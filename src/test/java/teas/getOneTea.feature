@@ -1,11 +1,12 @@
+@one
 Feature: Get one tea from GraphQL endpoint using dynamic values
 
 
     Background: Base URL
-    * url "https://graphql-teas-endpoint.netlify.app/" 
+    * url baseUrl
 
     Scenario: Get one tea by name
-        Given def teaQuery = read('TeaByName.graphql')
+        Given def teaQuery = read('classpath:teas/queries/TeaByName.graphql')
         And def teaName = { name: 'Lemon Balm' }
         And request { query: '#(teaQuery)', variables: '#(teaName)' }
         And method post

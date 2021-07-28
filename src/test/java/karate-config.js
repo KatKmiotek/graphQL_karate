@@ -1,18 +1,15 @@
 function fn() {
-  var env = karate.env; // get system property 'karate.env'
-  karate.log('karate.env system property was:', env);
-  if (!env) {
-    env = 'dev';
-  }
+  karate.configure('connectTimeout', 120000);
+  karate.configure('readTimeout', 120000);
+  karate.configure('report', { showLog: false, showAllSteps: false });
+
+  // Faker for randomized data
+  var faker = Java.type('com.github.javafaker.Faker');
+
+  // Default value for URL config
   var config = {
-    env: env,
-    myVarName: 'someValue'
-  }
-  if (env == 'dev') {
-    // customize
-    // e.g. config.foo = 'bar';
-  } else if (env == 'e2e') {
-    // customize
-  }
+    baseUrl: "https://graphql-teas-endpoint.netlify.app/",
+  };
+  config.faker = faker;
   return config;
 }
