@@ -42,6 +42,8 @@ Background: Base url
         }
         """
 
+
+
 Scenario: Get all teas and verify response
     # graphql case we will always post to the same url - no extra path needed
     Given path "/"
