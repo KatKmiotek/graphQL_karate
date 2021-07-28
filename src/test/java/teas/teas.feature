@@ -78,29 +78,29 @@ Scenario: Get one tea from the endpoint an verifyt response
     Then match response.data.teas[*].name contains "Lemon Balm"
 
 
-Scenario: Add one tea and verify response - MUTATION
-    # paload mutation
-    And request { query: '#(newTea)'}
-    # method
-    When method post
-    # response status code
-    Then status 200
+# Scenario: Add one tea and verify response - MUTATION
+#     # paload mutation
+#     And request { query: '#(newTea)'}
+#     # method
+#     When method post
+#     # response status code
+#     Then status 200
 
 
-Scenario: Delete one tea and verify response - MUTATION
-    # payload mutation
-    And request { query: '#(deleteTea)'}
-    # method
-    And method post
-    # response status code
-    Then status 200
-    # validate response as per endpoint docs
-    And match response.data.deleteTea == '#boolean'
-# other data type checks:
-    #null
-    #notnull
-    #boolean
-    #number
-    #string
-    #array
-    #object
+# Scenario: Delete one tea and verify response - MUTATION
+#     # payload mutation
+#     And request { query: '#(deleteTea)'}
+#     # method
+#     And method post
+#     # response status code
+#     Then status 200
+#     # validate response as per endpoint docs
+#     And match response.data.deleteTea == '#boolean'
+# # other data type checks:
+#     #null
+#     #notnull
+#     #boolean
+#     #number
+#     #string
+#     #array
+#     #object
